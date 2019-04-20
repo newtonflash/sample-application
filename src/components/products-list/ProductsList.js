@@ -13,7 +13,7 @@ const getProducts = products => {
 const ProductsList = ({ productsArray = [] }) => {
     console.log(productsArray);
 
-    return <div className="proudct-list">{getProducts(productsArray)}</div>;
+    return <div className="products-list">{getProducts(productsArray)}</div>;
 };
 
 export default ProductsList;

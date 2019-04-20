@@ -11,7 +11,10 @@ const config = {
         },
 
         // The following key is to keep labels for CMS authoring
-        labels: {},
+        labels: {
+            labelSale: 'Sale',
+            labelExclusive: 'Exclusive'
+        },
 
         // Keeping config as standard key for any kind of runtime configuration
         config: {},

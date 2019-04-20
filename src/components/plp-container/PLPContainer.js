@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { array, object } from 'prop-types';
 import axios from 'axios';
 import ProductsList from 'components/products-list';
+import ResponsiveContainer from 'core_components/responsive-container';
 
 /**
  *
@@ -20,9 +21,9 @@ const PLPContainer = ({ serviceEndPoints = [], labels = {} }) => {
     }, []);
 
     return (
-        <div>
+        <ResponsiveContainer>
             <ProductsList productsArray={products} />
-        </div>
+        </ResponsiveContainer>
     );
 };
 
