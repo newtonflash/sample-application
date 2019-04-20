@@ -1,34 +1,36 @@
 {
-  "name": "sample-application",
-  "version": "1.0.0",
-  "description": "Sample Application",
-  "main": "index.js",
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.4.3",
-    "@storybook/react": "^5.0.10",
-    "babel-loader": "^8.0.5",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.12.1",
-    "enzyme-to-json": "^3.3.5",
-    "jest": "^24.7.1",
-    "jest-dom": "^3.1.3"
-  },
-  "scripts": {
-    "test": "jest --config config/unit-testing/jest.config.json --coverage",
-    "start": "start-storybook -p 4444 -c storybook"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/newtonflash/sample-application.git"
-  },
-  "author": "Newton",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/newtonflash/sample-application/issues"
-  },
-  "homepage": "https://github.com/newtonflash/sample-application#readme"
+    "name": "sample-application",
+    "version": "1.0.0",
+    "description": "Sample Application",
+    "main": "index.js",
+    "dependencies": {
+        "axios": "^0.18.0",
+        "prop-types": "^15.7.2",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.4.3",
+        "@storybook/react": "^5.0.10",
+        "babel-loader": "^8.0.5",
+        "enzyme": "^3.9.0",
+        "enzyme-adapter-react-16": "^1.12.1",
+        "enzyme-to-json": "^3.3.5",
+        "jest": "^24.7.1",
+        "jest-dom": "^3.1.3"
+    },
+    "scripts": {
+        "test": "jest --config config/unit-testing/jest.config.json --coverage",
+        "start": "start-storybook --https --ssl-cert server.cert --ssl-key server.key -p 4444 -c storybook"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/newtonflash/sample-application.git"
+    },
+    "author": "Newton",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/newtonflash/sample-application/issues"
+    },
+    "homepage": "https://github.com/newtonflash/sample-application#readme"
 }
