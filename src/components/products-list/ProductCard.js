@@ -12,12 +12,15 @@ const ProductCard = ({
 }) => {
     return (
         <div className="product-card">
-            <h3>{productName}</h3>
-
             <ResponsiveImage url={productImage} />
-            {isSale && <Badge type="sale" label={labels.labelSale} />}
-            {isExclusive && <Badge type="exclusive" label={labels.labelExclusive} />}
-            <div className="product-card__price">{price}</div>
+            <div className="product-card__badge-container">
+                {isSale && <Badge type="sale" label={labels.labelSale} />}
+                {isExclusive && <Badge type="exclusive" label={labels.labelExclusive} />}
+            </div>
+            <div className="flex-container">
+                <h4 className="product-card__name">{productName}</h4>
+                <h3 className="product-card__price">{price}</h3>
+            </div>
         </div>
     );
 };

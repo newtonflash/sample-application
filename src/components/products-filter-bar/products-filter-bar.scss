@@ -1,0 +1,11 @@
+.products-filter-bar {
+    background-color: lightcyan;
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+
+    &__title {
+        font-size: 24px;
+        display: inline-block;
+    }
+}

@@ -13,14 +13,15 @@ const config = {
         // The following key is to keep labels for CMS authoring
         labels: {
             labelSale: 'Sale',
-            labelExclusive: 'Exclusive'
+            labelExclusive: 'Exclusive',
+            labelFilterBySize: 'Filter By Size'
         },
 
         // Keeping config as standard key for any kind of runtime configuration
         config: {},
 
         // Other properties to follow now
-        title: ''
+        title: "Women's tops"
     }
 };
 
