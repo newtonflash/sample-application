@@ -17,6 +17,12 @@ const config = {
             labelFilterBySize: 'Filter By Size'
         },
 
+        errorMessages: {
+            ERR_NO_FILTER_RESULTS:
+                'We are sorry, but we did not find any data with your selection. Please try a different combination',
+            ERR_DATA_RETRIVE_ERROR: 'Something went wrong behind the scene. Pleas try again later.'
+        },
+
         // Keeping config as standard key for any kind of runtime configuration
         config: {},
 

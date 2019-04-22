@@ -1,0 +1,10 @@
+.message {
+    padding: 7px 15px;
+    width: 100%;
+    display: flex;
+
+    &--error {
+        background-color: lightcoral; // Note: this can be driven by values from global variables
+        color: $color-primary-body-copy;
+    }
+}

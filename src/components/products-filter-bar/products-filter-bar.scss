@@ -1,5 +1,5 @@
 .products-filter-bar {
-    background-color: lightcyan;
+    background-color: #ddf2f3;
     padding: 7px;
     display: flex;
     justify-content: space-between;
@@ -7,5 +7,9 @@
     &__title {
         font-size: 24px;
         display: inline-block;
+    }
+    &__filter {
+        min-width: 200px;
+        height: 24px;
     }
 }

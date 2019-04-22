@@ -38,7 +38,7 @@ let serverResponseDate = [];
  *
  * @param {*} param0
  */
-const PLPContainer = ({ serviceEndPoints = [], labels = {}, title = '' }) => {
+const PLPContainer = ({ serviceEndPoints = [], labels = {}, title = '', errorMessages = {} }) => {
     // load the data and show
 
     const [products, updateProducts] = useState(0);
@@ -69,7 +69,11 @@ const PLPContainer = ({ serviceEndPoints = [], labels = {}, title = '' }) => {
                 onFilterSelect={onFilterChange}
                 selectedFilter={selectedFilter}
             />
-            <ProductsList productsArray={products} labels={labels} />
+            <ProductsList
+                productsArray={products}
+                labels={labels}
+                noProudctMessage={errorMessages.ERR_NO_FILTER_RESULTS}
+            />
         </ResponsiveContainer>
     );
 };
