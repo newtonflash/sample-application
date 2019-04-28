@@ -1,4 +1,22 @@
 {
     "automock": false,
-    "browser": true
+    "browser": true,
+    "testURL": "https://localhost/",
+    "moduleFileExtensions": ["js", "jsx"],
+    "testMatch": ["**/__tests__/*.js"],
+    "rootDir": "../../",
+    "verbose": true,
+    "moduleNameMapper": {
+        "^components(.*)$": "<rootDir>/src/components$1",
+        "^core_components(.*)$": "<rootDir>/src/core/components$1",
+        "^styles(.*)$": "<rootDir>/src/core/styles$1",
+        "^utils(.*)$": "<rootDir>/src/core/utils$1"
+    },
+    "transform": {
+        "^.+\\.(js|jsx)?$": "babel-jest"
+    },
+    "coverageDirectory": "<rootDir>/test-coverage",
+    "coverageReporters": ["json", "lcov", "text"],
+    "testEnvironment": "jsdom",
+    "setupFiles": ["<rootDir>/config/unit-testing/setup.js"]
 }

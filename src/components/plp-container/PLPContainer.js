@@ -1,19 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { array, object } from 'prop-types';
-import axios from 'axios';
+import getProductsList from 'services/product-list/ProductListService';
 import ProductsList from 'components/products-list';
 import ResponsiveContainer from 'core_components/responsive-container';
 import ProductsFilterBar from 'components/products-filter-bar';
-
-export const findUniqueArr = arr => {
-    var a = arr.concat();
-    for (var i = 0; i < a.length; ++i) {
-        for (var j = i + 1; j < a.length; ++j) {
-            if (a[i] === a[j]) a.splice(j--, 1);
-        }
-    }
-    return a;
-};
+import { findUniqueArr } from 'utils/array-utils';
 
 export const generateSizeFilters = (productsArr = []) => {
     const allSizes = productsArr.reduce((acc, products) => {
@@ -32,8 +23,6 @@ export const filterProductsBySize = (productsArr, filterValue) => {
     });
 };
 
-let serverResponseDate = [];
-
 /**
  *
  * @param {*} param0
@@ -45,19 +34,19 @@ const PLPContainer = ({ serviceEndPoints = [], labels = {}, title = '', errorMes
     const [filters, updateFilterData] = useState([]);
     const [selectedFilter, updateCurrentFilter] = useState(-1);
 
+    const onInitialDataRecieve = data => {
+        updateFilterData(generateSizeFilters(data));
+        updateProducts(data);
+    };
+
     useEffect(() => {
-        const updatePr = updateProducts;
-        axios.get(serviceEndPoints.productsList).then(response => {
-            serverResponseDate = response.data;
-            updateFilterData(generateSizeFilters(serverResponseDate));
-            updateProducts(serverResponseDate);
-        });
+        getProductsList(serviceEndPoints.productsList, onInitialDataRecieve);
     }, []);
 
     const onFilterChange = value => {
         updateCurrentFilter(value);
-
-        updateProducts(filterProductsBySize(serverResponseDate, value));
+        let originalData = getProductsList();
+        updateProducts(filterProductsBySize(originalData, value));
     };
 
     return (
