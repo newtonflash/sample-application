@@ -6,7 +6,14 @@ import ResponsiveContainer from 'core_components/responsive-container';
 import ProductsFilterBar from 'components/products-filter-bar';
 import { findUniqueArr } from 'utils/array-utils';
 
+/**
+ * generateSizeFilters creates data object for the filters.
+ * @memberof PLPContainer
+ * @param {*} productsArr
+ */
 export const generateSizeFilters = (productsArr = []) => {
+    if (productsArr.length === 0) return null;
+
     const allSizes = productsArr.reduce((acc, products) => {
         return { size: [...acc.size, ...products.size] };
     });
@@ -15,6 +22,11 @@ export const generateSizeFilters = (productsArr = []) => {
     });
 };
 
+/**
+ * Filters the product list by a particular size value
+ * @param {*} productsArr
+ * @param {*} filterValue
+ */
 export const filterProductsBySize = (productsArr, filterValue) => {
     if (filterValue * 1 === -1) return productsArr;
 
