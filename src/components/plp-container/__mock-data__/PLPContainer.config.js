@@ -27,7 +27,7 @@ const config = {
         config: {},
 
         // Other properties to follow now
-        title: "Women's tops"
+        title: 'Sample PLP application'
     }
 };
 
