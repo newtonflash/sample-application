@@ -35,3 +35,16 @@ jobs:
 
             # run tests!
             - run: npm test
+
+            - store_artifacts:
+              path: ~/sample-application/src/coverage
+              destination: ~/Reports/test_coverage
+
+            # build storybook-static
+            - run:
+              name: "Running NPM Storybook:Build Job"
+              command: npm run storybook:build
+
+            - store_artifacts:
+              path: ~/sample-application/storybook-static
+              destination: ~/Reports/storybook

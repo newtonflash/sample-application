@@ -28,7 +28,8 @@
     },
     "scripts": {
         "test": "jest --config config/unit-testing/jest.config.json --coverage",
-        "start": "start-storybook -s ./public --https --ssl-cert server.cert --ssl-key server.key -p 4444 -c storybook"
+        "start": "start-storybook -s ./public --https --ssl-cert server.cert --ssl-key server.key -p 4444 -c storybook",
+        "storybook:build": "build-storybook -c storybook"
     },
     "repository": {
         "type": "git",
