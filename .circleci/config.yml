@@ -37,7 +37,7 @@ jobs:
             - run: npm test
 
             - store_artifacts:
-                  path: ./src/coverage
+                  path: ./test-coverage
                   destination: ~/Reports/test_coverage
 
             # build storybook-static
