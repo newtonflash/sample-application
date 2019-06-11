@@ -1,5 +1,4 @@
-import React from 'react';
-import { generateSizeFilters, filterProductsBySize } from '../PLPContainer.js';
+import { generateSizeFilters, filterProductsBySize } from '../PLPContainer';
 
 describe('PLPContainer', () => {
     // test cases for generateSizeFilters

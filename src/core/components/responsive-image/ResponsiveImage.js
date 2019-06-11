@@ -13,6 +13,7 @@ const formImageURL = url => `images/products/${url}`;
  * @param {*} _class
  * @param {*} dimensions
  */
+// eslint-disable-next-line no-unused-vars
 const ResponsiveImage = ({ url = '', alt = '', _class = '', dimensions = [] }) => {
     return <img src={formImageURL(url)} alt={alt} className={`resp-img ${_class}`} />;
 };

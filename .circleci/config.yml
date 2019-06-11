@@ -33,6 +33,9 @@ jobs:
                       - node_modules
                   key: v1-dependencies-{{ checksum "package.json" }}
 
+            # run linting
+            - run: npm run lint
+
             # run tests!
             - run: npm test
 
@@ -42,7 +45,7 @@ jobs:
 
             # build storybook-static
             - run:
-                  name: "Running NPM Storybook:Build Job"
+                  name: 'Running NPM Storybook:Build Job'
                   command: npm run storybook:build
 
             - store_artifacts:

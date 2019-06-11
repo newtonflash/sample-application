@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { array, object } from 'prop-types';
 import getProductsList from 'services/product-list/ProductListService';
 import ProductsList from 'components/products-list';
 import ResponsiveContainer from 'core_components/responsive-container';
@@ -57,7 +56,7 @@ const PLPContainer = ({ serviceEndPoints = [], labels = {}, title = '', errorMes
 
     const onFilterChange = value => {
         updateCurrentFilter(value);
-        let originalData = getProductsList();
+        const originalData = getProductsList();
         updateProducts(filterProductsBySize(originalData, value));
     };
 
@@ -77,11 +76,6 @@ const PLPContainer = ({ serviceEndPoints = [], labels = {}, title = '', errorMes
             />
         </ResponsiveContainer>
     );
-};
-
-PLPContainer.proptypes = {
-    serviceEndPoints: array,
-    labels: object
 };
 
 export default PLPContainer;

@@ -1,1 +1,45 @@
-{}
+{
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "jsx": true,
+            "impliedStrict": true,
+            "legacyDecorators": true
+        },
+        "sourceType": "module"
+    },
+    "env": {
+        "es6": true,
+        "node": true,
+        "jest": true,
+        "browser": true
+    },
+    "plugins": ["react", "import", "react-hooks"],
+    "extends": ["eslint:recommended", "airbnb", "prettier"],
+    "settings": {
+        "react": {
+            "version": "16.4"
+        }
+    },
+    "rules": {
+        "no-plusplus": [
+            2,
+            {
+                "allowForLoopAfterthoughts": true
+            }
+        ],
+        "vars-on-top": 0,
+        "react/prop-types": 0,
+        "react/jsx-indent": [1, 4],
+        "react/jsx-indent-props": [1, 4],
+        "react/no-danger": 0,
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [".js", ".jsx"]
+            }
+        ],
+        "import/no-unresolved": 0 // putting this till we dont have resolver for eslint
+    }
+}
