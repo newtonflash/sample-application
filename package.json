@@ -16,7 +16,8 @@
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "sass-loader": "^7.1.0",
-        "style-loader": "^0.23.1"
+        "style-loader": "^0.23.1",
+        "wait-on": "^3.2.0"
     },
     "devDependencies": {
         "@babel/core": "^7.4.3",
@@ -44,7 +45,7 @@
     "scripts": {
         "lint": "eslint './src/**/*.js'",
         "test": "jest --config config/unit-testing/jest.config.json --coverage",
-        "start": "nodemon ./index.js",
+        "start": "npm run build && node ./index.js",
         "storybook": "start-storybook -s ./public --https --ssl-cert server.cert --ssl-key server.key -p 4444 -c storybook",
         "storybook:build": "build-storybook -c storybook  -s ./public",
         "e2e": "cypress open",
