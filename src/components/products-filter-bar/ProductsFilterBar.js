@@ -8,6 +8,7 @@ const ProductsFiterBar = ({ title = '', filtersData = [], onFilterSelect = undef
             {filtersData[0] && (
                 <select
                     className="products-filter-bar__filter"
+                    data-test-id="productsFilter"
                     onChange={e => {
                         onFilterSelect(e.target.value);
                     }}

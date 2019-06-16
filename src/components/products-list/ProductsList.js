@@ -11,7 +11,11 @@ const getProducts = (products, labels, noProductMessage = '') => {
 };
 
 const ProductsList = ({ productsArray = [], labels, noProductMessage }) => {
-    return <div className="products-list">{getProducts(productsArray, labels, noProductMessage)}</div>;
+    return (
+        <div className="products-list" data-test-id="productsList">
+            {getProducts(productsArray, labels, noProductMessage)}
+        </div>
+    );
 };
 
 export default ProductsList;
