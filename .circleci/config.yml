@@ -54,7 +54,5 @@ jobs:
 
             # build e2e test cases
             - run:
-                name : 'Running e2e test cases',
-                command: npm run ci:start | npm run cy:run
-
-
+                  name: 'Running e2e test cases'
+                  command: npm run ci:start | npm run cy:run
