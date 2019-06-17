@@ -51,8 +51,7 @@ jobs:
             - store_artifacts:
                   path: ./storybook-static
                   destination: ~/Reports/storybook
-
             # build e2e test cases
-            - run:
-                  name: 'Running e2e test cases'
-                  command: npm run ci:start | npm run cy:run
+            # - run:
+            #  name: 'Running e2e test cases'
+            #  command: npm run ci:start | npm run cy:run
