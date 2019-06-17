@@ -7,7 +7,7 @@ const config = {
 
         // Keeping all the endpoints here
         serviceEndPoints: {
-            productsList: 'https://api.jsonbin.io/b/5cae9a54fb42337645ebcad3'
+            productsList: 'https://api.jsonbin.io/b/5d07ae012132b7426d02d7ed'
         },
 
         // The following key is to keep labels for CMS authoring
