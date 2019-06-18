@@ -35,7 +35,7 @@ describe('PLPContainer', () => {
             }
         ];
 
-        expect(generateSizeFilters(sourceArr)).not.toMatchObject(filterdArr);
+        expect(generateSizeFilters(sourceArr)).toMatchObject(filterdArr);
     });
 
     // test cases for filterProductsBySize
