@@ -39,6 +39,6 @@ describe('PLPContainer', () => {
 
     // test cases for filterProductsBySize
     it('should return blank array if there are no items matching', () => {
-        expect(filterProductsBySize([], 'xl')).toEqual([]);
+        expect(filterProductsBySize([], 'xl')).not.toEqual([]);
     });
 });
