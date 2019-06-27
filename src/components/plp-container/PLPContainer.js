@@ -4,6 +4,7 @@ import ProductsList from 'components/products-list';
 import ResponsiveContainer from 'core_components/responsive-container';
 import ProductsFilterBar from 'components/products-filter-bar';
 import { findUniqueArr } from 'utils/array-utils';
+import { observer } from 'mobx-react-lite';
 
 /**
  * generateSizeFilters creates data object for the filters.
@@ -38,12 +39,14 @@ export const filterProductsBySize = (productsArr, filterValue) => {
  *
  * @param {*} param0
  */
-const PLPContainer = ({ serviceEndPoints = [], labels = {}, title = '', errorMessages = {} }) => {
+const PLPContainer = ({ serviceEndPoints = [], labels = {}, title = '', errorMessages = {}, PLPStore }) => {
     // load the data and show
 
     const [products, updateProducts] = useState(0);
     const [filters, updateFilterData] = useState([]);
-    const [selectedFilter, updateCurrentFilter] = useState(-1);
+    const selectedFilter = PLPStore.currentFilter;
+
+    console.log('==========', PLPStore.currentFilter);
 
     const onInitialDataRecieve = data => {
         updateFilterData(generateSizeFilters(data));
@@ -55,14 +58,16 @@ const PLPContainer = ({ serviceEndPoints = [], labels = {}, title = '', errorMes
     }, []);
 
     const onFilterChange = value => {
-        updateCurrentFilter(value);
-        const originalData = getProductsList();
-        updateProducts(filterProductsBySize(originalData, value));
+        PLPStore.changeFilter(value);
+        //updateCurrentFilter(value);
+        //const originalData = getProductsList();
+        //updateProducts(filterProductsBySize(originalData, value));
     };
 
     return (
         <ResponsiveContainer>
             <ProductsFilterBar
+                key={selectedFilter}
                 title={title}
                 filtersData={filters}
                 labels={labels}
@@ -78,4 +83,4 @@ const PLPContainer = ({ serviceEndPoints = [], labels = {}, title = '', errorMes
     );
 };
 
-export default PLPContainer;
+export default observer(PLPContainer);

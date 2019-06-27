@@ -11,21 +11,24 @@
         "express": "^4.17.1",
         "express-react-views": "^0.11.0",
         "mini-css-extract-plugin": "^0.7.0",
+        "mobx": "^5.10.1",
+        "mobx-react": "^6.1.1",
+        "mobx-react-lite": "^1.4.1",
+        "mobx-react-router": "^4.0.7",
         "node-sass": "^4.11.0",
         "prop-types": "^15.7.2",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "sass-loader": "^7.1.0",
-        "style-loader": "^0.23.1",
-        "wait-on": "^3.2.0"
+        "style-loader": "^0.23.1"
     },
     "devDependencies": {
         "@babel/core": "^7.4.3",
+        "@babel/plugin-proposal-decorators": "^7.4.4",
         "@babel/polyfill": "^7.4.4",
         "@storybook/react": "^5.0.10",
         "babel-eslint": "^10.0.1",
         "babel-loader": "^8.0.5",
-        "cypress": "^3.3.1",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.12.1",
         "enzyme-to-json": "^3.3.5",
@@ -48,11 +51,8 @@
         "start": "npm run build && node ./index.js",
         "storybook": "start-storybook -s ./public --https --ssl-cert server.cert --ssl-key server.key -p 4444 -c storybook",
         "storybook:build": "build-storybook -c storybook  -s ./public",
-        "e2e": "cypress open",
         "build": "webpack",
-        "build:dev": "webpack --watch",
-        "cy:run": "cypress run",
-        "ci:start": "npm start & wait-on http://localhost:1025"
+        "build:dev": "webpack --watch"
     },
     "repository": {
         "type": "git",
